@@ -1,0 +1,606 @@
+    :root {
+        --bg: #0f0f1a;
+        --surface: #1a1a2e;
+        --surface2: #222240;
+        --garis: rgba(255, 255, 255, 0.09);
+        --aksen: #7c6fe8;
+        --aksen2: #e8a87c;
+        --teks: #e8e8f4;
+        --redup: #8888a0;
+        --radius: 16px;
+        --transisi: 0.3s ease;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--bg);
+        color: var(--teks);
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    ::selection {
+        background: var(--aksen);
+        color: white;
+    }
+
+    .fw-500 {
+        font-weight: 500;
+    }
+
+    .teks-aksen {
+        color: var(--aksen2);
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--aksen);
+        border-radius: 3px;
+    }
+
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+        background: rgba(15, 15, 26, 0.88);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--garis);
+        padding: 14px 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, var(--aksen), var(--aksen2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .nav-link {
+        color: var(--redup) !important;
+        font-weight: 500;
+        font-size: 0.9rem;
+        padding: 8px 16px !important;
+        border-radius: 8px;
+        transition: var(--transisi);
+    }
+
+    .nav-link:hover {
+        color: var(--teks) !important;
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    .navbar-toggler {
+        border: 1px solid var(--garis);
+    }
+
+    .navbar-toggler-icon {
+        filter: invert(1);
+    }
+
+
+    /* ===== HERO ===== */
+    .hero-section {
+        background: var(--bg);
+        background-image:
+            radial-gradient(ellipse at 80% 10%, rgba(124, 111, 232, 0.18) 0%, transparent 55%),
+            radial-gradient(ellipse at 10% 90%, rgba(232, 168, 124, 0.12) 0%, transparent 55%);
+    }
+
+    .hero-sapaan {
+        font-size: 1rem;
+        color: var(--aksen2);
+        font-weight: 500;
+    }
+
+    .hero-nama {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        color: var(--teks);
+        line-height: 1.15;
+        margin: 6px 0;
+    }
+
+    .hero-jabatan {
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+        font-weight: 300;
+        color: var(--aksen2);
+    }
+
+    .hero-deskripsi {
+        color: var(--redup);
+        max-width: 480px;
+        font-size: 0.95rem;
+    }
+
+    .btn-utama {
+        background: var(--aksen);
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: var(--transisi);
+        box-shadow: 0 4px 20px rgba(124, 111, 232, 0.4);
+    }
+
+    .btn-utama:hover {
+        background: #6252cc;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: var(--teks);
+        border: 1.5px solid var(--garis);
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: var(--transisi);
+    }
+
+    .btn-outline:hover {
+        border-color: var(--aksen);
+        color: var(--aksen);
+    }
+
+    .stat-kotak {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stat-angka {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--aksen2);
+        line-height: 1.2;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+        color: var(--redup);
+    }
+
+    .foto-wrapper {
+        position: relative;
+        display: inline-block;
+    }
+
+    .foto-profil {
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        border: 4px solid var(--surface2);
+        object-fit: cover;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        animation: mengambang 4s ease-in-out infinite;
+    }
+
+    @keyframes mengambang {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-14px);
+        }
+    }
+
+    .foto-badge {
+        position: absolute;
+        bottom: 14px;
+        right: -8px;
+        background: var(--surface2);
+        border: 1px solid var(--garis);
+        padding: 7px 14px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--teks);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        white-space: nowrap;
+    }
+
+
+    /* ===== JUDUL SECTION ===== */
+    .label-section {
+        display: inline-block;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--aksen2);
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .judul-section {
+        font-size: clamp(1.6rem, 4vw, 2.4rem);
+        font-weight: 800;
+        color: var(--teks);
+        line-height: 1.2;
+    }
+
+
+    /* ===== ABOUT ===== */
+    .about-section {
+        background: var(--surface);
+        border-top: 1px solid var(--garis);
+    }
+
+    .about-foto-box {
+        position: relative;
+    }
+
+    .about-foto {
+        width: 100%;
+        max-width: 420px;
+        border: 3px solid var(--surface2);
+        display: block;
+    }
+
+    .about-kartu-edu {
+        position: absolute;
+        bottom: 20px;
+        right: -10px;
+        background: var(--surface2);
+        border: 1px solid var(--garis);
+        border-radius: 18px;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        max-width: 230px;
+        gap: 10px;
+        animation: mengambang 9s ease-in-out infinite;
+    }
+
+    .about-nama {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--teks);
+    }
+
+    .about-bio {
+        color: var(--redup);
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: flex-start;
+        padding: 12px;
+        background: var(--bg) !important;
+        border: 1px solid var(--garis) !important;
+        border-radius: 12px !important;
+        transition: var(--transisi);
+    }
+
+    .info-item:hover {
+        border-color: var(--aksen) !important;
+        background: rgba(124, 111, 232, 0.07) !important;
+    }
+
+    .info-ikon {
+        font-size: 1rem;
+        color: var(--aksen);
+        margin-top: 3px;
+    }
+
+    .judul-skills {
+        font-weight: 700;
+        color: var(--teks);
+    }
+
+    .skill-nama {
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--teks);
+    }
+
+    .skill-persen {
+        font-size: 0.82rem;
+        color: var(--aksen2);
+        font-weight: 600;
+    }
+
+    .skill-progress {
+        height: 8px !important;
+        background: var(--surface2) !important;
+        border-radius: 4px !important;
+    }
+
+    .skill-progress .progress-bar {
+        background: linear-gradient(90deg, var(--aksen), var(--aksen2)) !important;
+        border-radius: 4px !important;
+        transition: width 1s ease !important;
+    }
+
+    .exp-kartu {
+        background: var(--surface);
+        border: 1px solid var(--garis) !important;
+        border-radius: var(--radius) !important;
+        overflow: hidden;
+        transition: var(--transisi);
+    }
+
+    .exp-kartu:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4) !important;
+        border-color: rgba(124, 111, 232, 0.3) !important;
+    }
+
+    .exp-kartu .card-body {
+        background: var(--surface);
+        padding: 22px;
+    }
+
+    .exp-periode {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--aksen2);
+        background: rgba(232, 168, 124, 0.12);
+        padding: 3px 10px;
+        border-radius: 20px;
+    }
+
+    .exp-jabatan {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--teks);
+    }
+
+    .exp-perusahaan {
+        font-size: 0.85rem;
+        color: var(--aksen);
+        margin-bottom: 8px;
+    }
+
+    .exp-deskripsi {
+        font-size: 0.84rem;
+        color: var(--redup);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+
+    /* ===== CERTIFICATES - BOOTSTRAP CARD ===== */
+    .cert-section {
+        background: var(--bg);
+    }
+
+    .cert-kartu {
+        background: var(--surface);
+        border: 1px solid var(--garis) !important;
+        border-radius: var(--radius) !important;
+        overflow: hidden;
+        transition: var(--transisi);
+    }
+
+    .cert-kartu:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4) !important;
+        border-color: rgba(124, 111, 232, 0.3) !important;
+    }
+
+    .cert-kartu .card-header {
+        padding: 22px 20px 16px;
+        border-bottom: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .cert-ikon {
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .cert-badge-kat {
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 20px;
+    }
+
+    .cert-kartu .card-body {
+        padding: 16px 20px;
+        background: var(--surface);
+    }
+
+    .cert-judul {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--teks);
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .cert-penerbit {
+        font-size: 0.82rem;
+        color: var(--aksen2);
+        margin-bottom: 4px;
+    }
+
+    .cert-tanggal {
+        font-size: 0.82rem;
+        color: var(--redup);
+        margin-bottom: 10px;
+    }
+
+    .cert-deskripsi {
+        font-size: 0.82rem;
+        color: var(--redup);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .cert-kartu .card-footer {
+        padding: 10px 20px;
+        background: rgba(0, 0, 0, 0.15);
+        border-top: 1px solid var(--garis) !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cert-id {
+        font-size: 0.68rem;
+        color: var(--redup);
+        font-family: 'Courier New', monospace;
+    }
+
+    .tombol-cert {
+        font-size: 0.78rem;
+        padding: 5px 15px;
+        border-radius: 50px;
+        background: transparent;
+        border: 1px solid var(--aksen);
+        color: var(--aksen);
+        font-weight: 600;
+        transition: var(--transisi);
+    }
+
+    .tombol-cert:hover {
+        background: var(--aksen);
+        color: white;
+    }
+
+
+    /* ===== FOOTER ===== */
+    .footer-section {
+        background: var(--surface);
+        border-top: 1px solid var(--garis);
+    }
+
+    .footer-nama {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin: 0;
+        background: linear-gradient(90deg, var(--aksen), var(--aksen2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .sosmed-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid var(--garis);
+        color: var(--redup);
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: var(--transisi);
+    }
+
+    .sosmed-link:hover {
+        background: var(--aksen);
+        border-color: var(--aksen);
+        color: white;
+        transform: translateY(-3px);
+    }
+
+    .footer-copy {
+        font-size: 0.82rem;
+        color: var(--redup);
+        margin: 0;
+    }
+
+
+    /* ===== ANIMASI ===== */
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero-sapaan {
+        animation: fadeUp 0.5s ease both 0.1s;
+    }
+
+    .hero-nama {
+        animation: fadeUp 0.5s ease both 0.25s;
+    }
+
+    .hero-jabatan {
+        animation: fadeUp 0.5s ease both 0.4s;
+    }
+
+    .hero-deskripsi {
+        animation: fadeUp 0.5s ease both 0.5s;
+    }
+
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 991px) {
+        .about-kartu-edu {
+            right: 0;
+        }
+
+        .foto-profil {
+            width: 220px;
+            height: 220px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .about-kartu-edu {
+            display: none;
+        }
+
+        .foto-badge {
+            right: 0;
+            font-size: 0.74rem;
+        }
+    }
+
+    @media (max-width: 575px) {
+
+        .btn-utama,
+        .btn-outline {
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-nama {
+            font-size: 1.9rem;
+        }
+    }
