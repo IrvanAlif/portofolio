@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio - Irvan Alif</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0f0f1a;
+      --surface: #1a1a2e;
+      --surface2: #222240;
+      --garis: rgba(255, 255, 255, 0.09);
+      --aksen: #7c6fe8;
+      --aksen2: #e8a87c;
+      --teks: #e8e8f4;
+      --redup: #8888a0;
+      --radius: 16px;
+      --transisi: 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--teks);
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--aksen);
+      color: white;
+    }
+
+    .fw-500 {
+      font-weight: 500;
+    }
+
+    .teks-aksen {
+      color: var(--aksen2);
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--aksen);
+      border-radius: 3px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(15, 15, 26, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--garis);
+      padding: 14px 0;
+    }
+
+    .navbar-brand {
+      font-size: 1.3rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--aksen), var(--aksen2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-link {
+      color: var(--redup) !important;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 8px 16px !important;
+      border-radius: 8px;
+      transition: var(--transisi);
+    }
+
+    .nav-link:hover {
+      color: var(--teks) !important;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .navbar-toggler {
+      border: 1px solid var(--garis);
+    }
+
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+
+    /* HERO */
+    .hero-section {
+      background: var(--bg);
+      background-image:
+        radial-gradient(ellipse at 80% 10%, rgba(124, 111, 232, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 90%, rgba(232, 168, 124, 0.12) 0%, transparent 55%);
+    }
+
+    .hero-sapaan {
+      font-size: 1rem;
+      color: var(--aksen2);
+      font-weight: 500;
+      animation: fadeUp 0.5s ease both 0.1s;
+    }
+
+    .hero-nama {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: var(--teks);
+      line-height: 1.15;
+      margin: 6px 0;
+      animation: fadeUp 0.5s ease both 0.25s;
+    }
+
+    .hero-jabatan {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 300;
+      color: var(--aksen2);
+      animation: fadeUp 0.5s ease both 0.4s;
+    }
+
+    .hero-deskripsi {
+      color: var(--redup);
+      max-width: 480px;
+      font-size: 0.95rem;
+      animation: fadeUp 0.5s ease both 0.5s;
+    }
+
+    .btn-utama {
+      background: var(--aksen);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transisi);
+      box-shadow: 0 4px 20px rgba(124, 111, 232, 0.4);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-utama:hover {
+      background: #6252cc;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--teks);
+      border: 1.5px solid var(--garis);
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: var(--transisi);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--aksen);
+      color: var(--aksen);
+    }
+
+    .stat-kotak {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-angka {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--aksen2);
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--redup);
+    }
+
+    .foto-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .foto-profil {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 4px solid var(--surface2);
+      object-fit: cover;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      animation: mengambang 4s ease-in-out infinite;
+      background: var(--surface2);
+    }
+
+    .foto-placeholder {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 4px solid var(--surface2);
+      background: linear-gradient(135deg, var(--surface2), var(--aksen));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      color: white;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      animation: mengambang 4s ease-in-out infinite;
+    }
+
+    @keyframes mengambang {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-14px);
+      }
+    }
+
+    .foto-badge {
+      position: absolute;
+      bottom: 14px;
+      right: -8px;
+      background: var(--surface2);
+      border: 1px solid var(--garis);
+      padding: 7px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--teks);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      white-space: nowrap;
+    }
+
+    /* JUDUL SECTION */
+    .label-section {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--aksen2);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .judul-section {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      color: var(--teks);
+      line-height: 1.2;
+    }
+
+    /* ABOUT */
+    .about-section {
+      background: var(--surface);
+      border-top: 1px solid var(--garis);
+    }
+
+    .about-foto-box {
+      position: relative;
+    }
+
+    .about-foto {
+      width: 100%;
+      max-width: 420px;
+      border: 3px solid var(--surface2);
+      display: block;
+    }
+
+    .about-foto-placeholder {
+      width: 100%;
+      max-width: 420px;
+      height: 380px;
+      background: linear-gradient(135deg, var(--surface2), var(--aksen));
+      border-radius: 1rem;
+      border: 3px solid var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .about-kartu-edu {
+      position: absolute;
+      bottom: 20px;
+      right: -10px;
+      background: var(--surface2);
+      border: 1px solid var(--garis);
+      border-radius: 18px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      max-width: 230px;
+      gap: 10px;
+      animation: mengambang 9s ease-in-out infinite;
+      font-size: 0.85rem;
+      color: var(--teks);
+      font-weight: 500;
+    }
+
+    .about-nama {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--teks);
+    }
+
+    .about-bio {
+      color: var(--redup);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 12px;
+      background: var(--bg) !important;
+      border: 1px solid var(--garis) !important;
+      border-radius: 12px !important;
+      transition: var(--transisi);
+    }
+
+    .info-item:hover {
+      border-color: var(--aksen) !important;
+      background: rgba(124, 111, 232, 0.07) !important;
+    }
+
+    .info-ikon {
+      font-size: 1rem;
+      color: var(--aksen);
+      margin-top: 3px;
+    }
+
+    .judul-skills {
+      font-weight: 700;
+      color: var(--teks);
+    }
+
+    .skill-nama {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--teks);
+    }
+
+    .skill-persen {
+      font-size: 0.82rem;
+      color: var(--aksen2);
+      font-weight: 600;
+    }
+
+    .skill-progress {
+      height: 8px !important;
+      background: var(--surface2) !important;
+      border-radius: 4px !important;
+    }
+
+    .skill-progress .progress-bar {
+      background: linear-gradient(90deg, var(--aksen), var(--aksen2)) !important;
+      border-radius: 4px !important;
+      transition: width 1s ease !important;
+    }
+
+    /* EXPERIENCE */
+    .exp-kartu {
+      background: var(--surface);
+      border: 1px solid var(--garis) !important;
+      border-radius: var(--radius) !important;
+      overflow: hidden;
+      transition: var(--transisi);
+    }
+
+    .exp-kartu:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4) !important;
+      border-color: rgba(124, 111, 232, 0.3) !important;
+    }
+
+    .exp-kartu .card-body {
+      background: var(--surface);
+      padding: 22px;
+    }
+
+    .exp-periode {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--aksen2);
+      background: rgba(232, 168, 124, 0.12);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .exp-jabatan {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--teks);
+    }
+
+    .exp-perusahaan {
+      font-size: 0.85rem;
+      color: var(--aksen);
+      margin-bottom: 8px;
+    }
+
+    .exp-deskripsi {
+      font-size: 0.84rem;
+      color: var(--redup);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* CERTIFICATES */
+    .cert-section {
+      background: var(--bg);
+    }
+
+    .cert-kartu {
+      background: var(--surface);
+      border: 1px solid var(--garis) !important;
+      border-radius: var(--radius) !important;
+      overflow: hidden;
+      transition: var(--transisi);
+    }
+
+    .cert-kartu:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4) !important;
+      border-color: rgba(124, 111, 232, 0.3) !important;
+    }
+
+    .cert-kartu .card-header {
+      padding: 22px 20px 16px;
+      border-bottom: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .cert-ikon {
+      font-size: 2rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .cert-badge-kat {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .cert-kartu .card-body {
+      padding: 16px 20px;
+      background: var(--surface);
+    }
+
+    .cert-judul {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--teks);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .cert-penerbit {
+      font-size: 0.82rem;
+      color: var(--aksen2);
+      margin-bottom: 4px;
+    }
+
+    .cert-tanggal {
+      font-size: 0.82rem;
+      color: var(--redup);
+      margin-bottom: 10px;
+    }
+
+    .cert-deskripsi {
+      font-size: 0.82rem;
+      color: var(--redup);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .cert-kartu .card-footer {
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.15);
+      border-top: 1px solid var(--garis) !important;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cert-id {
+      font-size: 0.68rem;
+      color: var(--redup);
+      font-family: 'Courier New', monospace;
+    }
+
+    .tombol-cert {
+      font-size: 0.78rem;
+      padding: 5px 15px;
+      border-radius: 50px;
+      background: transparent;
+      border: 1px solid var(--aksen);
+      color: var(--aksen);
+      font-weight: 600;
+      transition: var(--transisi);
+      text-decoration: none;
+    }
+
+    .tombol-cert:hover {
+      background: var(--aksen);
+      color: white;
+    }
+
+    /* FOOTER */
+    .footer-section {
+      background: var(--surface);
+      border-top: 1px solid var(--garis);
+    }
+
+    .footer-nama {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 0;
+      background: linear-gradient(90deg, var(--aksen), var(--aksen2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .sosmed-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--garis);
+      color: var(--redup);
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: var(--transisi);
+    }
+
+    .sosmed-link:hover {
+      background: var(--aksen);
+      border-color: var(--aksen);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--redup);
+      margin: 0;
+    }
+
+    /* ANIMASI */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 991px) {
+      .about-kartu-edu {
+        right: 0;
+      }
+
+      .foto-profil,
+      .foto-placeholder {
+        width: 220px;
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .about-kartu-edu {
+        display: none;
+      }
+
+      .foto-badge {
+        right: 0;
+        font-size: 0.74rem;
+      }
+    }
+
+    @media (max-width: 575px) {
+
+      .btn-utama,
+      .btn-outline {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-nama {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Irvan Alif</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Pengalaman</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center min-vh-100 py-5">
+
+        <div class="col-lg-7 order-2 order-lg-1 mt-4 mt-lg-0">
+          <p class="hero-sapaan">Halo, perkenalkan saya</p>
+          <h1 class="hero-nama">Irvan Alif</h1>
+          <h2 class="hero-jabatan">Mahasiswa Sistem Informasi</h2>
+          <p class="hero-deskripsi mt-3">Mahasiswa aktif di Universitas Mulawarman Program Studi Sistem Informasi.
+            Tertarik di bidang teknologi informasi dan pengembangan sistem.</p>
+
+          <div class="d-flex gap-3 mt-4 flex-wrap">
+            <a href="#certificates" class="btn-utama">Lihat Sertifikat <i class="bi bi-arrow-right ms-1"></i></a>
+            <a href="#about" class="btn-outline">Tentang Saya</a>
+          </div>
+
+          <div class="d-flex gap-4 mt-5 flex-wrap">
+            <div class="stat-kotak">
+              <div class="stat-angka">4</div>
+              <div class="stat-label">Semester</div>
+            </div>
+            <div class="stat-kotak">
+              <div class="stat-angka">2</div>
+              <div class="stat-label">Koordinator</div>
+            </div>
+            <div class="stat-kotak">
+              <div class="stat-angka">5</div>
+              <div class="stat-label">Sertifikat</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 order-1 order-lg-2 text-center">
+          <div class="foto-wrapper">
+            <img src="image/alip.jpeg" alt="Foto Profil Irvan Alif" class="foto-profil" />
+            <div class="foto-badge">
+              <i class="bi bi-mortarboard-fill text-warning me-1"></i>
+              Universitas Mulawarman
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ME -->
+  <section id="about" class="about-section py-5">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <span class="label-section">Kenali Lebih Dekat</span>
+        <h2 class="judul-section">Tentang <span class="teks-aksen">Saya</span></h2>
+      </div>
+
+      <div class="row g-5 align-items-start">
+
+        <div class="col-lg-5">
+          <div class="about-foto-box">
+            <img src="image/alip.jpeg" alt="Foto About Irvan Alif" class="about-foto img-fluid rounded-4 shadow" />
+            <div class="about-kartu-edu">
+              <i class="bi bi-mortarboard-fill text-warning"></i>
+              <span>S1 Sistem Informasi</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <h3 class="about-nama">Irvan Alif</h3>
+          <p class="hero-jabatan">Mahasiswa Sistem Informasi</p>
+          <p class="about-bio">Saya Irvan Alif, mahasiswa semester 4 Jurusan Sistem Informasi di Universitas Mulawarman.
+            Saya memiliki latar belakang sertifikasi LSP Jaringan Komputer (MikroTik) dari SMK dan aktif berorganisasi
+            di Information System Association (INFORSA) sebagai Staff Departemen RELACS 2025. Saya pernah menjadi
+            Koordinator di INSAN (Information System Safari Ramadan) dan INSEVENT (Information System Event), serta
+            aktif sebagai panitia dalam berbagai kegiatan kampus.</p>
+
+          <div class="row g-3 mt-3 mb-4">
+            <div class="col-12 col-sm-6">
+              <div class="card info-item">
+                <i class="bi bi-geo-alt-fill info-ikon"></i>
+                <div class="ms-2">
+                  <small class="d-block" style="color:var(--redup)">Lokasi</small>
+                  <span class="fw-500" style="color:var(--redup)">Samarinda, Kalimantan Timur</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="card info-item">
+                <i class="bi bi-envelope-fill info-ikon"></i>
+                <div class="ms-2">
+                  <small class="d-block" style="color:var(--redup)">Email</small>
+                  <span class="fw-500" style="color:var(--redup)">irvanalifsani@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="card info-item">
+                <i class="bi bi-mortarboard-fill info-ikon"></i>
+                <div class="ms-2">
+                  <small class="d-block" style="color:var(--redup)">Status</small>
+                  <span class="fw-500" style="color:var(--redup)">Mahasiswa Aktif</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="card info-item">
+                <i class="bi bi-laptop info-ikon"></i>
+                <div class="ms-2">
+                  <small class="d-block" style="color:var(--redup)">Jurusan</small>
+                  <span class="fw-500" style="color:var(--redup)">Sistem Informasi</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h5 class="judul-skills mb-3">
+            <i class="bi bi-gear text-warning me-4"></i>Skills &amp; Keahlian
+          </h5>
+
+          <!-- Skills -->
+          <div class="mb-3">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="skill-nama">Jaringan Komputer (MikroTik)</span>
+              <span class="skill-persen">90%</span>
+            </div>
+            <div class="progress skill-progress">
+              <div class="progress-bar" role="progressbar" style="width:90%" aria-valuenow="90" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="skill-nama">Manajemen Event</span>
+              <span class="skill-persen">85%</span>
+            </div>
+            <div class="progress skill-progress">
+              <div class="progress-bar" role="progressbar" style="width:85%" aria-valuenow="85" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="skill-nama">HTML &amp; CSS</span>
+              <span class="skill-persen">80%</span>
+            </div>
+            <div class="progress skill-progress">
+              <div class="progress-bar" role="progressbar" style="width:80%" aria-valuenow="80" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="skill-nama">Kerja Tim &amp; Leadership</span>
+              <span class="skill-persen">88%</span>
+            </div>
+            <div class="progress skill-progress">
+              <div class="progress-bar" role="progressbar" style="width:88%" aria-valuenow="88" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="skill-nama">Microsoft Office</span>
+              <span class="skill-persen">85%</span>
+            </div>
+            <div class="progress skill-progress">
+              <div class="progress-bar" role="progressbar" style="width:85%" aria-valuenow="85" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="skill-nama">Problem Solving</span>
+              <span class="skill-persen">80%</span>
+            </div>
+            <div class="progress skill-progress">
+              <div class="progress-bar" role="progressbar" style="width:80%" aria-valuenow="80" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PENGALAMAN -->
+  <section id="experience" class="about-section py-5">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <span class="label-section">Riwayat Saya</span>
+        <h2 class="judul-section">Pengalaman <span class="teks-aksen">Saya</span></h2>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6">
+          <div class="card exp-kartu h-100 border-0">
+            <div class="card-body">
+              <span class="exp-periode">2024-2025</span>
+              <h5 class="card-title exp-jabatan mt-2">Koordinator Kegiatan</h5>
+              <p class="exp-perusahaan"><i class="bi bi-building me-1"></i>INSAN &amp; INSEVENT</p>
+              <p class="card-text exp-deskripsi">Memimpin dan mengoordinasikan tim dalam kegiatan INSAN dan INSEVENT,
+                bertanggung jawab terhadap perencanaan serta pengelolaan logistik acara.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card exp-kartu h-100 border-0">
+            <div class="card-body">
+              <span class="exp-periode">2024-2025</span>
+              <h5 class="card-title exp-jabatan mt-2">Panitia Kegiatan Akademik &amp; Pengabdian</h5>
+              <p class="exp-perusahaan"><i class="bi bi-building me-1"></i>Program Studi Sistem Informasi</p>
+              <p class="card-text exp-deskripsi">Terlibat sebagai panitia dalam kegiatan Akselerasi Pengenalan
+                Lingkungan Kampus (APLIKASI) dan pengabdian masyarakat berbasis literasi teknologi.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card exp-kartu h-100 border-0">
+            <div class="card-body">
+              <span class="exp-periode">2024-2025</span>
+              <h5 class="card-title exp-jabatan mt-2">Staff Departemen RELACS</h5>
+              <p class="exp-perusahaan"><i class="bi bi-building me-1"></i>INFORSA</p>
+              <p class="card-text exp-deskripsi">Berkontribusi dalam program kerja organisasi dan kegiatan sosial
+                kemahasiswaan.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card exp-kartu h-100 border-0">
+            <div class="card-body">
+              <span class="exp-periode">2024</span>
+              <h5 class="card-title exp-jabatan mt-2">Proyek Akademik</h5>
+              <p class="exp-perusahaan"><i class="bi bi-building me-1"></i>Program Studi Sistem Informasi</p>
+              <p class="card-text exp-deskripsi">Mengerjakan proyek perancangan dan analisis sistem informasi berbasis
+                studi kasus.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates" class="cert-section py-5">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <span class="label-section">Pencapaian Saya</span>
+        <h2 class="judul-section">Sertifikat <span class="teks-aksen">Saya</span></h2>
+        <p class="text-muted mt-2">Kumpulan sertifikat dari berbagai platform pembelajaran dan sertifikasi kompetensi.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Cert 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card cert-kartu h-100 border-0">
+            <div class="card-header" style="background: linear-gradient(135deg, #29323c, #485563)">
+              <i class="cert-ikon bi bi-router"></i>
+              <span class="cert-badge-kat">Jaringan &amp; Infrastruktur</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title cert-judul">Sertifikasi LSP Jaringan Komputer - MikroTik</h5>
+              <p class="cert-penerbit"><i class="bi bi-award me-1"></i>Lembaga Sertifikasi Profesi (SMK)</p>
+              <p class="cert-tanggal"><i class="bi bi-calendar3 me-1"></i>2023</p>
+              <p class="card-text cert-deskripsi">Sertifikasi kompetensi bidang jaringan komputer dengan fokus pada
+                perangkat MikroTik, mencakup konfigurasi router, wireless, dan manajemen jaringan.</p>
+            </div>
+            <div class="card-footer">
+              <small class="cert-id">ID: LSP-TKJ-MIKROTIK</small>
+              <a href="#" target="_blank" class="tombol-cert">Lihat <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cert 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card cert-kartu h-100 border-0">
+            <div class="card-header" style="background: linear-gradient(135deg, #1e3c72, #2a5298)">
+              <i class="cert-ikon bi bi-briefcase-fill"></i>
+              <span class="cert-badge-kat">Kepanitiaan</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title cert-judul">Koordinator Perlengkapan - INSEVENT 2025</h5>
+              <p class="cert-penerbit"><i class="bi bi-award me-1"></i>Information System Association (INFORSA)</p>
+              <p class="cert-tanggal"><i class="bi bi-calendar3 me-1"></i>17 Maret - 2 Desember 2025</p>
+              <p class="card-text cert-deskripsi">Sebagai Koordinator Perlengkapan dalam kegiatan INSEVENT 2025 dan
+                bertanggung jawab terhadap pengelolaan logistik serta perlengkapan acara.</p>
+            </div>
+            <div class="card-footer">
+              <small class="cert-id">ID: 1328/INSEVENT/INFORSA/I/2026</small>
+              <a href="#" target="_blank" class="tombol-cert">Lihat <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cert 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card cert-kartu h-100 border-0">
+            <div class="card-header" style="background: linear-gradient(135deg, #0f2027, #203a43)">
+              <i class="cert-ikon bi bi-mortarboard-fill"></i>
+              <span class="cert-badge-kat">Kepanitiaan</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title cert-judul">Panitia Akselerasi Pengenalan Lingkungan Kampus 2025</h5>
+              <p class="cert-penerbit"><i class="bi bi-award me-1"></i>Program Studi Sistem Informasi</p>
+              <p class="cert-tanggal"><i class="bi bi-calendar3 me-1"></i>15-16 November 2025</p>
+              <p class="card-text cert-deskripsi">Panitia kegiatan APLIKASI 2025 dengan tema "Aktualisasi Kemampuan
+                Kognitif dan Resiliensi Karakter Pada Mahasiswa Baru".</p>
+            </div>
+            <div class="card-footer">
+              <small class="cert-id">ID: 1062/APLIKASI/INFORSA/XII/2025</small>
+              <a href="#" target="_blank" class="tombol-cert">Lihat <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cert 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card cert-kartu h-100 border-0">
+            <div class="card-header" style="background: linear-gradient(135deg, #11998e, #38ef7d)">
+              <i class="cert-ikon bi bi-people-fill"></i>
+              <span class="cert-badge-kat">Pengabdian Masyarakat</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title cert-judul">Panitia Inforsa Mengabdi 2025</h5>
+              <p class="cert-penerbit"><i class="bi bi-award me-1"></i>Fakultas Teknik Universitas Mulawarman</p>
+              <p class="cert-tanggal"><i class="bi bi-calendar3 me-1"></i>4 September - 5 Oktober 2025</p>
+              <p class="card-text cert-deskripsi">Berperan sebagai panitia dalam kegiatan pengabdian masyarakat INFORSA
+                Mengabdi 2025.</p>
+            </div>
+            <div class="card-footer">
+              <small class="cert-id">ID: 11503/UN17.9/DL.07.00/2025</small>
+              <a href="#" target="_blank" class="tombol-cert">Lihat <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cert 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card cert-kartu h-100 border-0">
+            <div class="card-header" style="background: linear-gradient(135deg, #141e30, #243b55)">
+              <i class="cert-ikon bi bi-building-fill"></i>
+              <span class="cert-badge-kat">Organisasi</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title cert-judul">Pengurus INFORSA 2025 - Departemen RELACS</h5>
+              <p class="cert-penerbit"><i class="bi bi-award me-1"></i>Information System Association (INFORSA)</p>
+              <p class="cert-tanggal"><i class="bi bi-calendar3 me-1"></i>19 Februari - 31 Desember 2025</p>
+              <p class="card-text cert-deskripsi">Anggota Departemen Relations and Community Services (RELACS) dalam
+                kepengurusan INFORSA 2025.</p>
+            </div>
+            <div class="card-footer">
+              <small class="cert-id">ID: 1534/KEPENGURUSAN2025/INFORSA</small>
+              <a href="#" target="_blank" class="tombol-cert">Lihat <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-section py-5">
+    <div class="container text-center">
+      <p class="footer-nama">Irvan Alif</p>
+      <div class="d-flex justify-content-center gap-3 my-3">
+        <a href="#" class="sosmed-link" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="#" class="sosmed-link" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="sosmed-link" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="mailto:irvanalifsani@gmail.com" class="sosmed-link"><i class="bi bi-envelope"></i></a>
+      </div>
+      <p class="footer-copy">
+        &copy; 2026 Irvan Alif &middot;
+        Mahasiswa Sistem Informasi Universitas Mulawarman &middot;
+        Dibuat dengan <i class="bi bi-heart-fill text-danger"></i>
+        HTML, CSS &amp; Bootstrap 5
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
